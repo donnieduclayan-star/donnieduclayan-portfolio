@@ -106,10 +106,17 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-lg font-bold tracking-tight text-dark hover:text-accent transition-colors duration-300 block"
+            className="font-display text-lg font-bold tracking-tight text-dark hover:text-accent transition-colors duration-300 flex items-center gap-2.5 group"
           >
-            <span className="gradient-text">{personalInfo.name.split(" ")[0]}</span>
-            <span className="text-muted font-normal ml-1">.dev</span>
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-600 to-cyan-500 p-[1.5px] shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/40 transition-all duration-300">
+              <div className="w-full h-full bg-[#0a0a0f] rounded-[10.5px] flex items-center justify-center font-display font-black text-transparent bg-clip-text bg-gradient-to-br from-purple-400 via-indigo-300 to-cyan-400 text-lg">
+                D
+              </div>
+            </div>
+            <div>
+              <span className="gradient-text">{personalInfo.name.split(" ")[0]}</span>
+              <span className="text-muted font-normal ml-1">.dev</span>
+            </div>
           </motion.a>
         </MagneticButton>
 
