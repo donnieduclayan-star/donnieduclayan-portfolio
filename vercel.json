@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd my-portfolio && npm install && npm run build",
+  "outputDirectory": "my-portfolio/dist",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|screenshots/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
