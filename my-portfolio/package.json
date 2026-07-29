@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"node server/server.js\"",
     "server": "node server/server.js",
-    "build": "node generate-pdf.js && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
