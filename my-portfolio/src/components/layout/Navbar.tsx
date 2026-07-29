@@ -18,7 +18,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState<"light" | "dark">(() => {
     const saved = localStorage.getItem("theme");
-    return (saved === "dark" || saved === "light") ? saved : "light";
+    return (saved === "dark" || saved === "light") ? saved : "dark";
   });
 
   useEffect(() => {
