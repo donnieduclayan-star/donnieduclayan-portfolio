@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donnie R. Duclayan - Resume</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #2563eb;
+      --color-dark: #111827;
+      --color-muted: #4b5563;
+      --color-light-bg: #f8fafc;
+      --color-border: #e5e7eb;
+      
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-display: 'Outfit', 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-light-bg);
+      font-family: var(--font-sans);
+      color: var(--color-dark);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+
+    /* Actions Bar */
+    .actions-bar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      max-width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid var(--color-border);
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-secondary {
+      background-color: white;
+      color: var(--color-dark);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* Resume Container */
+    .resume-wrapper {
+      max-width: 800px;
+      margin: 32px auto;
+      background: white;
+      padding: 56px 64px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+    }
+
+    /* Header */
+    .resume-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .name {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-dark);
+      letter-spacing: -0.025em;
+    }
+
+    .contact-info {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-info span:not(:last-child)::after {
+      content: "|";
+      margin-left: 12px;
+      color: var(--color-border);
+    }
+
+    .contact-info a {
+      color: var(--color-muted);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      color: var(--color-primary);
+    }
+
+    /* Sections */
+    .resume-section {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-dark);
+      border-bottom: 2px solid var(--color-dark);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 13px;
+      color: var(--color-muted);
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    /* Experience Item */
+    .experience-item {
+      margin-bottom: 16px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title-org {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-dark);
+    }
+
+    .item-date {
+      font-size: 12px;
+      color: var(--color-muted);
+      font-weight: 500;
+    }
+
+    .item-bullets {
+      list-style-type: disc;
+      margin-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .item-bullets li {
+      font-size: 12px;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    /* Skills Grid */
+    .skills-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .skills-list li {
+      font-size: 13px;
+      color: var(--color-muted);
+    }
+
+    .skills-list li strong {
+      color: var(--color-dark);
+      font-weight: 600;
+    }
+
+    /* Reference Columns */
+    .references-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .reference-card {
+      font-size: 12px;
+      color: var(--color-muted);
+      line-height: 1.4;
+    }
+
+    .ref-name {
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 2px;
+    }
+
+    .cert-list {
+      list-style-type: disc;
+      margin-left: 18px;
+    }
+
+    .cert-list li {
+      font-size: 13px;
+      color: var(--color-muted);
+      margin-bottom: 4px;
+    }
+
+    /* Print styling overrides */
+    @media print {
+      body {
+        background-color: white;
+        padding-bottom: 0;
+      }
+
+      .actions-bar {
+        display: none !important;
+      }
+
+      .resume-wrapper {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      /* Force page breaks cleanly if it extends slightly */
+      .resume-section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top floating action controls -->
+  <div class="actions-bar">
+    <a href="./" class="btn btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Portfolio
+    </a>
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Main resume content -->
+  <div class="resume-wrapper">
+    
+    <header class="resume-header">
+      <h1 class="name">DONNIE R. DUCLAYAN</h1>
+      <div class="contact-info">
+        <span>Brgy. Cadaclan, San Fernando City, La Union</span>
+        <span>0952 458 6003</span>
+        <span><a href="mailto:donnieduclayan@gmail.com">donnieduclayan@gmail.com</a></span>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="resume-section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        Motivated and adaptable IT professional with experience in system administration, technical support, system development and social media management. Skilled in troubleshooting hardware, software, experienced in managing projects, coordinating teams, and ensuring successful project execution, and implementing efficient technical solutions. Demonstrated leadership as an SK Chairperson with experience in program planning, budget management, and community engagement.
+      </p>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="resume-section">
+      <h2 class="section-title">Work Experience</h2>
+      
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">System Administrator | BLAM SHJ Cockpit Arena</span>
+          <span class="item-date">2025 - Present</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Managed Windows systems, troubleshooting and resolve hardware related issues, and PC Building.</li>
+          <li>Performed preventive maintenance, and system monitoring.</li>
+          <li>Improved operational efficiency through reliable technical support.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">Social Media Manager | BLAM SHJ Cockpit Arena</span>
+          <span class="item-date">2025 - Present</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Created promotional content and managed social media campaigns.</li>
+          <li>Increased audience engagement through live updates and analytics.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">Technical Support Specialist | Private Client</span>
+          <span class="item-date">2024 - 2025</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Diagnosed and resolved hardware, software, and network issues.</li>
+          <li>Provided technical assistance and user training.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">SK Chairperson | Barangay Cadaclan</span>
+          <span class="item-date">2018 - 2023</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Led youth programs focused on education, sports, and community development.</li>
+          <li>Managed budgets and ensured compliance with COA guidelines.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">IT Intern | Department of Trade and Industry (DTI) Region 1</span>
+          <span class="item-date">2023 - 2024</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Developed the DTI PlanTrack System for planning, monitoring, tracking, and calendar management.</li>
+          <li>Assisted in developing, managing and monitoring DTI systems including DTI:E-Records Management System and GenService System.</li>
+          <li>Conducted QA testing, troubleshooting, and technical support for internal systems.</li>
+          <li>Coordinated with regional and provincial offices for system consolidation and reporting features.</li>
+          <li>Assisted in project management, documentation, and user support activities.</li>
+          <li>Performed hardware troubleshooting, computer maintenance, and network-related support.</li>
+          <li>Diagnosed and resolved hardware, software, and connectivity issues.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">Personal Aide | Mr. Francisco "Kit" Ortega Jr.</span>
+          <span class="item-date">2022 - 2023</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Managed schedules, documents, and administrative tasks.</li>
+          <li>Assisted with virtual meetings and technology-related concerns.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section">
+      <h2 class="section-title">Projects</h2>
+      <div class="experience-item" style="margin-bottom: 12px;">
+        <span class="item-title-org">YESDO:</span>
+        <span class="summary-text" style="font-size: 12px; margin-left: 4px;">Youth, Education and Sports Development Management System for the City of San Fernando, La Union</span>
+      </div>
+      <div class="experience-item" style="margin-bottom: 12px;">
+        <span class="item-title-org">DTI: PlanTrack System:</span>
+        <span class="summary-text" style="font-size: 12px; margin-left: 4px;">An Integrated Planning, Monitoring, Tracking and Calendar Management System for the Department of Trade and Industry Region 1</span>
+      </div>
+      <div class="experience-item" style="margin-bottom: 12px;">
+        <span class="item-title-org">DTI: E-Records:</span>
+        <span class="summary-text" style="font-size: 12px; margin-left: 4px;">A secure digital record indexing system designed to catalog and audit official documentation for DTI Region 1.</span>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-title">Education</h2>
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">Saint Louis College &ndash; Bachelor of Science in Information Technology</span>
+          <span class="item-date">2022 &ndash; 2026</span>
+        </div>
+        <ul class="item-bullets">
+          <li>Capstone Project: YESDO &ndash; Youth, Education and Sports Development Management System</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <div class="item-header">
+          <span class="item-title-org">La Union National High School &ndash; Senior & Junior High School</span>
+          <span class="item-date">2019 &ndash; 2022</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="resume-section">
+      <h2 class="section-title">Certifications & Seminars</h2>
+      <ul class="cert-list">
+        <li>Design Thinking Workshop &ndash; Makerspace Innovhub, Saint Louis College (2025)</li>
+        <li>UP Digital Transformation &ndash; UP Diliman / Saint Louis College (2025)</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="resume-section">
+      <h2 class="section-title">Skills</h2>
+      <ul class="skills-list">
+        <li><strong>System Administration & Technical Troubleshooting:</strong> OS Deployment, Active Directory, Server Logs, Network configurations</li>
+        <li><strong>Hardware/Software Installation & Maintenance:</strong> PC Building, Upgrades, Driver setups, workstation repairs</li>
+        <li><strong>Tools & Design:</strong> Microsoft Office, Canva, Figma</li>
+        <li><strong>Core Competencies:</strong> Leadership, Communication, Problem-Solving</li>
+        <li><strong>Languages:</strong> English, Filipino, Iloko</li>
+      </ul>
+    </section>
+
+    <!-- References -->
+    <section class="resume-section">
+      <h2 class="section-title">References</h2>
+      <div class="references-grid">
+        <div class="reference-card">
+          <div class="ref-name">Mark Vincent Garibay</div>
+          <div>BSIT major in Food Trades Technology</div>
+          <div>Don Mariano Marcos Memorial State University</div>
+          <div>0977 210 6582</div>
+        </div>
+        <div class="reference-card">
+          <div class="ref-name">Jolie Anne Gacayan</div>
+          <div>EXL Company</div>
+          <div>Nurse Associate</div>
+          <div>0956 3940 1524</div>
+        </div>
+        <div class="reference-card">
+          <div class="ref-name">Dianne R. Corpuz</div>
+          <div>SK Treasurer</div>
+          <div>Barangay Cadaclan</div>
+          <div>0954 972 6759</div>
+        </div>
+        <div class="reference-card">
+          <div class="ref-name">Francis Jucar</div>
+          <div>Cockpit Manager</div>
+          <div>BLAM SHJ COCKPIT ARENA</div>
+          <div>0961 853 4093</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    // Prompt the print dialog on load for convenient preview & saving
+    window.addEventListener('DOMContentLoaded', () => {
+      // Small timeout to allow styles to fully load
+      setTimeout(() => {
+        window.print();
+      }, 500);
+    });
+  </script>
+</body>
+</html>
