@@ -11,6 +11,7 @@ export interface Skill {
   iconName: string;
   tags: string[];
   logoId?: string;
+  category: "Frontend" | "Backend" | "Design";
 }
 
 export interface SkillCategory {
@@ -65,7 +66,7 @@ export const personalInfo = {
     "System Administrator",
     "Project Manager",
     "System Developer",
-    "Technical Support Engineer"
+    "Technical Support"
   ],
   bio: "Motivated and adaptable IT professional with experience in system administration, technical support, system development, and social media management. Skilled in troubleshooting hardware and software, experienced in managing projects, coordinating teams, and ensuring successful project execution. Demonstrated leadership as an SK Chairperson with experience in program planning, budget management, and community engagement.",
   careerObjective: "Seeking a challenging role in IT Support, System Administration, or Software Development where I can leverage my problem-solving abilities, technical expertise, and leadership skills to drive operational excellence and build impactful digital systems.",
@@ -78,14 +79,14 @@ export const personalInfo = {
   emailRaw: "donnieduclayan@gmail.com",
   phone: "0952 458 6003",
   location: "Brgy. Cadaclan, San Fernando City, La Union",
-  resumeUrl: "./resume.pdf"
+  resumeUrl: "./DuclayanResume.pdf"
 };
 
 export const stats: Stat[] = [
   {
     label: "Projects Completed",
-    value: 6,
-    suffix: "+",
+    value: 1,
+    suffix: "",
     description: "Systems, web portals, and support projects built"
   },
   {
@@ -93,12 +94,6 @@ export const stats: Stat[] = [
     value: 3,
     suffix: "",
     description: "Database-backed custom corporate systems"
-  },
-  {
-    label: "Technical Skills",
-    value: 15,
-    suffix: "+",
-    description: "IT support, networks, and software packages mastered"
   },
   {
     label: "Leadership Experience",
@@ -109,61 +104,120 @@ export const stats: Stat[] = [
 ];
 
 export const skills: Skill[] = [
+  // ─── Frontend ───
   {
-    name: "React & Vite (Frontend)",
+    name: "React & Vite",
     description: "Building responsive, modern Single Page Applications (SPAs) leveraging Vite for fast hot module replacement.",
     iconName: "AppWindow",
     tags: ["React", "Vite", "SPA", "HMR"],
-    logoId: "react"
+    logoId: "react",
+    category: "Frontend"
   },
   {
-    name: "Node.js & Express (Backend)",
-    description: "Architecturing fast web servers, backend application business logics, router gateways, and middleware pipelines.",
-    iconName: "Server",
-    tags: ["Node.js", "Express", "Backend", "API Design"],
-    logoId: "node"
-  },
-  {
-    name: "PostgreSQL (Database)",
-    description: "Designing structured schema patterns, connection pooling setups, constraints configuration, and complex query optimizing.",
-    iconName: "Database",
-    tags: ["PostgreSQL", "SQL", "Pool", "Data Modeling"],
-    logoId: "postgres"
-  },
-  {
-    name: "JWT & bcrypt (Authentication)",
-    description: "Implementing stateless secure authentication using JSON Web Tokens (JWT) and encryption salting using bcrypt.",
-    iconName: "ShieldAlert",
-    tags: ["JWT", "bcrypt", "Auth", "Security"],
-    logoId: "jwt"
-  },
-  {
-    name: "Helmet & Rate Limiting (Security)",
-    description: "Securing APIs by configuring request-header filters via Helmet and preventing brute force requests using rate limits.",
-    iconName: "Terminal",
-    tags: ["Helmet", "Rate Limit", "CORS", "API Security"],
-    logoId: "security"
-  },
-  {
-    name: "Docker (Deployment)",
-    description: "Containerizing services for isolated, reproducible server builds and cross-environment deployment parity.",
-    iconName: "Boxes",
-    tags: ["Docker", "Containers", "DevOps"],
-    logoId: "docker"
-  },
-  {
-    name: "REST API (API Style)",
-    description: "Structuring standard HTTP requests and endpoints using resource-based structures and JSON formats.",
-    iconName: "Network",
-    tags: ["RESTful", "HTTP Verbs", "JSON APIs", "REST"],
-    logoId: "api"
-  },
-  {
-    name: "JavaScript (Language)",
+    name: "JavaScript",
     description: "Writing high-quality dynamic execution flows, backend services, and interactive client structures in modern ES6+ Javascript.",
     iconName: "Code",
     tags: ["JavaScript", "ES6+", "Promises", "Async/Await"],
-    logoId: "js"
+    logoId: "js",
+    category: "Frontend"
+  },
+  {
+    name: "HTML5 & CSS3",
+    description: "Crafting semantic, accessible markup and responsive layouts with modern CSS features like Grid, Flexbox, and custom properties.",
+    iconName: "Layout",
+    tags: ["HTML5", "CSS3", "Flexbox", "Grid"],
+    logoId: "html",
+    category: "Frontend"
+  },
+  {
+    name: "TypeScript",
+    description: "Building type-safe applications with static typing, interfaces, and generics for robust, maintainable, and scalable codebases.",
+    iconName: "FileType",
+    tags: ["TypeScript", "Type Safety", "Interfaces", "Generics"],
+    logoId: "typescript",
+    category: "Frontend"
+  },
+  {
+    name: "Tailwind CSS",
+    description: "Rapidly building custom user interfaces with utility-first CSS framework for consistent, responsive design systems.",
+    iconName: "Paintbrush",
+    tags: ["Tailwind", "Utility-First", "Responsive", "Design System"],
+    logoId: "tailwind",
+    category: "Frontend"
+  },
+  // ─── Backend ───
+  {
+    name: "Node.js & Express",
+    description: "Architecturing fast web servers, backend application business logics, router gateways, and middleware pipelines.",
+    iconName: "Server",
+    tags: ["Node.js", "Express", "Backend", "API Design"],
+    logoId: "node",
+    category: "Backend"
+  },
+  {
+    name: "PostgreSQL",
+    description: "Designing structured schema patterns, connection pooling setups, constraints configuration, and complex query optimizing.",
+    iconName: "Database",
+    tags: ["PostgreSQL", "SQL", "Pool", "Data Modeling"],
+    logoId: "postgres",
+    category: "Backend"
+  },
+  {
+    name: "JWT & bcrypt",
+    description: "Implementing stateless secure authentication using JSON Web Tokens (JWT) and encryption salting using bcrypt.",
+    iconName: "ShieldAlert",
+    tags: ["JWT", "bcrypt", "Auth", "Security"],
+    logoId: "jwt",
+    category: "Backend"
+  },
+  {
+    name: "Helmet & Rate Limiting",
+    description: "Securing APIs by configuring request-header filters via Helmet and preventing brute force requests using rate limits.",
+    iconName: "Terminal",
+    tags: ["Helmet", "Rate Limit", "CORS", "API Security"],
+    logoId: "security",
+    category: "Backend"
+  },
+  {
+    name: "Docker",
+    description: "Containerizing services for isolated, reproducible server builds and cross-environment deployment parity.",
+    iconName: "Boxes",
+    tags: ["Docker", "Containers", "DevOps"],
+    logoId: "docker",
+    category: "Backend"
+  },
+  {
+    name: "REST API",
+    description: "Structuring standard HTTP requests and endpoints using resource-based structures and JSON formats.",
+    iconName: "Network",
+    tags: ["RESTful", "HTTP Verbs", "JSON APIs", "REST"],
+    logoId: "api",
+    category: "Backend"
+  },
+  // ─── Design ───
+  {
+    name: "Figma",
+    description: "Designing high-fidelity UI/UX prototypes, wireframes, and collaborative design systems for web and mobile applications.",
+    iconName: "Figma",
+    tags: ["UI/UX", "Prototyping", "Wireframes", "Design Systems"],
+    logoId: "figma",
+    category: "Design"
+  },
+  {
+    name: "Adobe Photoshop",
+    description: "Creating and editing professional graphics, photo composites, banners, and visual assets for digital and print media.",
+    iconName: "Image",
+    tags: ["Photo Editing", "Graphics", "Compositing", "Retouching"],
+    logoId: "photoshop",
+    category: "Design"
+  },
+  {
+    name: "Canva",
+    description: "Producing social media content, presentations, infographics, and marketing materials with rapid visual design workflows.",
+    iconName: "Palette",
+    tags: ["Social Media", "Marketing", "Presentations", "Infographics"],
+    logoId: "canva",
+    category: "Design"
   }
 ];
 
@@ -216,7 +270,7 @@ export const experiences: Experience[] = [
   {
     role: "IT Intern",
     company: "Department of Trade and Industry (DTI) Region 1",
-    period: "2023 - 2024",
+    period: "2026",
     responsibilities: [
       "Developed the DTI PlanTrack System, a planning, monitoring, tracking, and calendar management platform.",
       "Assisted in developing, managing, and monitoring DTI systems including the DTI:E-Records Management System and GenService System.",
@@ -243,15 +297,14 @@ export const projects: Project[] = [
     id: "yesdo-system",
     title: "YESDO Management System",
     description: "A secure, database-backed platform designed to catalog youth council records, register local projects, and track budget allocations.",
-    detailedDescription: "The Youth Empowerment & Sports Development Organization (YESDO) Management System is Donnie's capstone project at Saint Louis College. It digits institutional workflows, allowing admins to register programs, track budgets, log volunteers, and verify compliance report outcomes.",
-    role: "Lead Full-Stack Developer",
+    detailedDescription: "The Youth Empowerment & Sports Development Organization (YESDO) Management System is Donnie's capstone project at Saint Louis College. Serving as the Project Manager and Quality Assurance Lead, Donnie guided the development team through system architecture, workflow planning, rigorous QA testing, and successful project delivery.",
+    role: "Project Manager & Quality Assurance",
     features: [
-      "Role-Based Access Control (RBAC) with secure JWT encryption for Admin and Staff personnel.",
-      "Live budgeting dashboard with dynamic data visualizations of allocations and remaining resources.",
-      "Auto-generation of PDF-formatted compliance reports for auditing bodies.",
-      "Volunteers directory tracking hours contributed and skills catalog."
+      "Guided and led the project development team through system architecture design and project milestone execution.",
+      "Conducted comprehensive Quality Assurance (QA) testing, bug tracking, and system validation across all modules.",
+      "Overseen functional requirements, budgeting workflow design, and compliance report specs for successful project delivery."
     ],
-    techStack: ["React", "Node.js", "Express.js", "PostgreSQL", "Tailwind CSS"],
+    techStack: ["Project Management", "QA Testing", "Quality Assurance", "Team Leadership", "System Architecture"],
     databaseSchema: [
       "Users Table (id, email, password_hash, role, created_at)",
       "Projects Table (id, title, description, start_date, status, budget_id)",
@@ -328,25 +381,55 @@ export const leadershipActivities: LeadershipActivity[] = [
   }
 ];
 
-export const education = {
-  degree: "Bachelor of Science in Information Technology",
-  institution: "Saint Louis College",
-  period: "2022 - 2026",
-  description: "Specialized in database systems administration, computer networking, systems analysis, and enterprise software engineering.",
-  achievements: [
-    "Capstone Project: Developed the YESDO Management System.",
-    "Internship at Department of Trade and Industry (DTI) Region 1: Developed the DTI: PlanTrack Management System.",
-    "Served as IT Project Manager for the development of DTI: e-Records and DTI: GenSys."
-  ],
-  coursework: [
-    "Database Management Systems (PostgreSQL)",
-    "Systems Analysis and Design",
-    "Computer Networking & Diagnostics",
-    "Information Security & System Administration",
-    "Web Application Development",
-    "Project Management Principles"
-  ]
-};
+export interface EducationItem {
+  level: string;
+  degree: string;
+  institution: string;
+  period: string;
+  description: string;
+  capstone?: string;
+  achievements?: string[];
+}
+
+export const educationList: EducationItem[] = [
+  {
+    level: "College",
+    degree: "BS in Information Technology",
+    institution: "Saint Louis College",
+    period: "2022 - 2026",
+    description: "Specialized in database administration, networking, systems analysis, and enterprise software engineering.",
+    capstone: "YESDO: Youth Education and Sports Development Management System",
+    achievements: [
+      "Capstone Project: YESDO Management System",
+      "Internship: DTI Region 1 PlanTrack System",
+      "IT Project Manager: DTI E-Records System"
+    ]
+  },
+  {
+    level: "Senior High School",
+    degree: "Senior High School Diploma",
+    institution: "La Union National High School",
+    period: "2021 - 2022",
+    description: "Completed senior high school education with a focus on academic development and technical foundations.",
+    achievements: [
+      "Academic Excellence Track",
+      "Technical & Computer Skills Foundation"
+    ]
+  },
+  {
+    level: "High School",
+    degree: "Junior High School Diploma",
+    institution: "La Union National High School",
+    period: "2016 - 2020",
+    description: "Completed secondary education with active participation in student activities and school organization events.",
+    achievements: [
+      "Junior High School Graduate",
+      "Active Student Community Member"
+    ]
+  }
+];
+
+export const education = educationList[0];
 
 export const certifications: Certification[] = [
   {

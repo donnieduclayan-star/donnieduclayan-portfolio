@@ -4,12 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const SECTIONS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "leadership", label: "Leadership" },
   { id: "education", label: "Education" },
-  { id: "certifications", label: "Certs" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -81,11 +78,12 @@ export default function ScrollSpy() {
                 <motion.div
                   animate={{
                     scale: isActive ? 1 : 0.6,
-                    backgroundColor: isActive ? "#6366f1" : "rgba(255, 255, 255, 0.2)",
+                    backgroundColor: isActive ? "#6366f1" : "var(--color-muted-val)",
+                    opacity: isActive ? 1 : 0.4,
                   }}
-                  whileHover={{ scale: 1, backgroundColor: "#6366f1" }}
+                  whileHover={{ scale: 1, backgroundColor: "#6366f1", opacity: 1 }}
                   transition={{ duration: 0.2 }}
-                  className="w-2.5 h-2.5 rounded-full border border-white/10"
+                  className="w-2.5 h-2.5 rounded-full border border-border"
                 />
               </button>
             );

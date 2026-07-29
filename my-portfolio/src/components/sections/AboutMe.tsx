@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useInView, useSpring, useMotionValue } from "framer-motion";
 import { personalInfo, stats } from "../../data/portfolioData";
 import type { Stat } from "../../data/portfolioData";
-import { Award, Briefcase, GraduationCap, Sparkles } from "lucide-react";
+import { Briefcase, GraduationCap, Sparkles } from "lucide-react";
 import TextReveal from "../ui/TextReveal";
 import TiltCard from "../ui/TiltCard";
 import StaggerContainer from "../ui/StaggerContainer";
@@ -12,14 +12,14 @@ export default function AboutMe() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 bg-transparent relative overflow-hidden px-6 md:px-12">
+    <section id="about" className="py-16 md:py-20 bg-transparent relative overflow-hidden px-4 sm:px-6 md:px-12">
       {/* Subtle gradient accent */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[150px]" />
 
-      <div ref={containerRef} className="mx-auto max-w-7xl relative z-10">
+      <div ref={containerRef} className="mx-auto max-w-[1400px] relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 15, filter: "blur(6px)" }}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
@@ -75,14 +75,13 @@ export default function AboutMe() {
 
             {/* Value Highlights Cards with Stagger + Tilt + Rotation */}
             <StaggerContainer
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"
               staggerDelay={0.15}
               direction="up"
             >
               {[
-                { icon: Briefcase, title: "IT Specialist", desc: "Infrastructure setups & diagnostics" },
+                { icon: Briefcase, title: "IT Support", desc: "Hardware & software troubleshooting" },
                 { icon: GraduationCap, title: "System Dev", desc: "Database structures & clean layouts" },
-                { icon: Award, title: "SK Leader", desc: "Community project coordination" },
               ].map((item, idx) => (
                 <motion.div
                   key={item.title}

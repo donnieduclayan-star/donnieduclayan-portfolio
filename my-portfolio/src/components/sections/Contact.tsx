@@ -110,14 +110,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-transparent relative overflow-hidden px-6 md:px-12">
+    <section id="contact" className="py-16 md:py-20 bg-transparent relative overflow-hidden px-4 sm:px-6 md:px-12">
       {/* Ambient gradient */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[150px]" />
 
-      <div ref={sectionRef} className="mx-auto max-w-7xl relative z-10">
+      <div ref={sectionRef} className="mx-auto max-w-[1400px] relative z-10">
 
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
@@ -128,15 +128,24 @@ export default function Contact() {
             Connect
           </motion.div>
 
-          <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-dark">
-            <TextReveal text="Get In " delay={0.1} />
-            <span className="font-serif italic text-accent/80">Touch</span>
+
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-dark leading-[1.1]">
+            <TextReveal text="Let's Build Something " delay={0.1} />
+            <span className="font-serif italic text-accent/80">Together</span>
           </h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-4 text-base text-muted max-w-lg mx-auto"
+          >
+            Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+          </motion.p>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={isInView ? { scaleX: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-4 h-1 w-16 bg-gradient-to-r from-accent to-purple-500 rounded mx-auto origin-left"
+            className="mt-5 h-1 w-16 bg-gradient-to-r from-accent to-purple-500 rounded mx-auto origin-left"
           />
         </div>
 

@@ -13,7 +13,6 @@ const SECTIONS: SectionInfo[] = [
   { id: "skills", label: "Expertise" },
   { id: "experience", label: "Journey" },
   { id: "projects", label: "Portfolio" },
-  { id: "leadership", label: "Governance" },
   { id: "education", label: "Background" },
   { id: "certifications", label: "Credentials" },
   { id: "contact", label: "Contact" }
@@ -101,7 +100,7 @@ export default function ScrollHUD() {
           animate={{ opacity: 1, x: 0, scale: 1 }}
           exit={{ opacity: 0, x: -30, scale: 0.9 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 left-6 z-40 hidden sm:flex items-center gap-3.5 pl-3.5 pr-4 py-2.5 rounded-full glass border border-white/10 shadow-lg shadow-black/25 backdrop-blur-md"
+          className="fixed bottom-6 left-6 z-40 hidden sm:flex items-center gap-3.5 pl-3.5 pr-4 py-2.5 rounded-full glass border border-border shadow-lg shadow-black/10 backdrop-blur-md"
         >
           {/* Radial Progress indicator with interior indicator */}
           <div className="relative w-9 h-9 flex items-center justify-center">
@@ -110,7 +109,7 @@ export default function ScrollHUD() {
                 cx="18"
                 cy="18"
                 r={radius}
-                className="stroke-white/5 fill-transparent"
+                className="stroke-muted/20 fill-transparent"
                 strokeWidth={strokeWidth}
               />
               <motion.circle
@@ -139,7 +138,7 @@ export default function ScrollHUD() {
               <span className="font-mono text-xs font-bold text-muted">
                 {String(activeIdx + 1).padStart(2, "0")}
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white/15" />
+              <span className="w-1.5 h-1.5 rounded-full bg-muted/40" />
               <AnimatePresence mode="wait">
                 <motion.span
                   key={activeSection}
@@ -158,9 +157,9 @@ export default function ScrollHUD() {
           {/* Action button to proceed forward */}
           <motion.button
             onClick={handleNextSection}
-            whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.08)" }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="w-7 h-7 rounded-full flex items-center justify-center glass border border-white/5 text-muted hover:text-accent transition-colors"
+            className="w-7 h-7 rounded-full flex items-center justify-center glass border border-border text-muted hover:text-accent transition-colors"
             title="Next Section"
           >
             <ChevronDown className="w-4 h-4" />

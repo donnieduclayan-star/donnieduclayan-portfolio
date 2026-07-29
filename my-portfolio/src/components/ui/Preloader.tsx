@@ -158,15 +158,7 @@ export default function Preloader() {
                         </motion.div>
                       </motion.div>
 
-                      {/* Role subtitle */}
-                      <motion.p
-                        initial={{ opacity: 0, y: 8, filter: "blur(4px)" }}
-                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.4, delay: 0.3 }}
-                        className="text-[10px] font-semibold text-muted tracking-[0.25em] uppercase mt-4"
-                      >
-                        IT Specialist & System Developer
-                      </motion.p>
+
                     </>
                   )}
                 </motion.div>

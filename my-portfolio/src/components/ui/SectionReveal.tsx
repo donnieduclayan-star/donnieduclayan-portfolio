@@ -31,18 +31,18 @@ export default function SectionReveal({
     switch (variant) {
       case "left":
         return {
-          hidden: { opacity: 0, x: -60, filter: "blur(4px)" },
-          visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+          hidden: { opacity: 0, x: -60 },
+          visible: { opacity: 1, x: 0 },
         };
       case "right":
         return {
-          hidden: { opacity: 0, x: 60, filter: "blur(4px)" },
-          visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+          hidden: { opacity: 0, x: 60 },
+          visible: { opacity: 1, x: 0 },
         };
       case "scale":
         return {
-          hidden: { opacity: 0, scale: 0.85, filter: "blur(8px)" },
-          visible: { opacity: 1, scale: 1, filter: "blur(0px)" },
+          hidden: { opacity: 0, scale: 0.85 },
+          visible: { opacity: 1, scale: 1 },
         };
       case "clip":
         return {
@@ -51,13 +51,13 @@ export default function SectionReveal({
         };
       case "blur":
         return {
-          hidden: { opacity: 0, filter: "blur(20px)", y: 10 },
-          visible: { opacity: 1, filter: "blur(0px)", y: 0 },
+          hidden: { opacity: 0, y: 10 },
+          visible: { opacity: 1, y: 0 },
         };
       default: // "up"
         return {
-          hidden: { opacity: 0, y: 50, scale: 0.97, filter: "blur(4px)" },
-          visible: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" },
+          hidden: { opacity: 0, y: 50, scale: 0.97 },
+          visible: { opacity: 1, y: 0, scale: 1 },
         };
     }
   };

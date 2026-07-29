@@ -63,14 +63,14 @@ export default function Leadership() {
   const narrativeY = useTransform(scrollYProgress, [0, 1], ["10px", "-10px"]);
 
   return (
-    <section id="leadership" className="py-24 bg-transparent relative overflow-hidden px-6 md:px-12">
+    <section id="leadership" className="py-16 md:py-20 bg-transparent relative overflow-hidden px-4 sm:px-6 md:px-12">
       {/* Ambient glow */}
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[150px]" />
 
-      <div ref={sectionRef} className="mx-auto max-w-7xl relative z-10">
+      <div ref={sectionRef} className="mx-auto max-w-[1400px] relative z-10">
 
         {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
             animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}

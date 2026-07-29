@@ -126,7 +126,7 @@ export default function HoneycombBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-[1] opacity-35 mix-blend-screen"
+      className="fixed inset-0 pointer-events-none z-[1] opacity-40"
       style={{ background: "transparent" }}
     />
   );
