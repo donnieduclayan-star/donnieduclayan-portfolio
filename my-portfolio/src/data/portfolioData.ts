@@ -386,7 +386,7 @@ export interface EducationItem {
   degree: string;
   institution: string;
   period: string;
-  description: string;
+  description?: string;
   capstone?: string;
   achievements?: string[];
 }
@@ -397,35 +397,21 @@ export const educationList: EducationItem[] = [
     degree: "BS in Information Technology",
     institution: "Saint Louis College",
     period: "2022 - 2026",
-    description: "Specialized in database administration, networking, systems analysis, and enterprise software engineering.",
-    capstone: "YESDO: Youth Education and Sports Development Management System",
-    achievements: [
-      "Capstone Project: YESDO Management System",
-      "Internship: DTI Region 1 PlanTrack System",
-      "IT Project Manager: DTI E-Records System"
-    ]
+    capstone: "YESDO: Youth Education and Sports Development Management System"
   },
   {
     level: "Senior High School",
     degree: "Senior High School Diploma",
     institution: "La Union National High School",
-    period: "2021 - 2022",
-    description: "Completed senior high school education with a focus on academic development and technical foundations.",
-    achievements: [
-      "Academic Excellence Track",
-      "Technical & Computer Skills Foundation"
-    ]
+    period: "2020 - 2022",
+    description: "HUMSS (Humanities and Social Sciences) Track focusing on communication, social dynamics, and critical thinking."
   },
   {
     level: "High School",
     degree: "Junior High School Diploma",
     institution: "La Union National High School",
     period: "2016 - 2020",
-    description: "Completed secondary education with active participation in student activities and school organization events.",
-    achievements: [
-      "Junior High School Graduate",
-      "Active Student Community Member"
-    ]
+    description: "Secondary education with active participation in campus technical clubs and community activities."
   }
 ];
 

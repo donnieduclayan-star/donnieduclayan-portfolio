@@ -91,11 +91,10 @@ export default function Navbar() {
         opacity: 1,
       }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled
-          ? "glass shadow-lg shadow-black/10 py-3"
-          : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled
+        ? "glass shadow-lg shadow-black/10 py-3"
+        : "bg-transparent py-5"
+        }`}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-12 flex items-center justify-between">
         {/* Logo / Brand Name — entrance animation */}
@@ -134,11 +133,10 @@ export default function Navbar() {
                   delay: 0.2 + idx * 0.06,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className={`relative text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 block ${
-                  activeSection === item.href
-                    ? "text-accent"
-                    : "text-muted hover:text-dark"
-                }`}
+                className={`relative text-sm font-medium px-4 py-2 rounded-lg transition-all duration-300 block ${activeSection === item.href
+                  ? "text-accent"
+                  : "text-muted hover:text-dark"
+                  }`}
               >
                 {item.label}
                 {/* Sliding active pill indicator */}
@@ -286,11 +284,10 @@ export default function Navbar() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05, duration: 0.3 }}
-                  className={`text-base font-semibold py-3 px-4 rounded-xl transition-all duration-200 ${
-                    activeSection === item.href
-                      ? "text-accent bg-accent/10"
-                      : "text-muted hover:text-dark hover:bg-black/5"
-                  }`}
+                  className={`text-base font-semibold py-3 px-4 rounded-xl transition-all duration-200 ${activeSection === item.href
+                    ? "text-accent bg-accent/10"
+                    : "text-muted hover:text-dark hover:bg-black/5"
+                    }`}
                 >
                   {item.label}
                 </motion.a>

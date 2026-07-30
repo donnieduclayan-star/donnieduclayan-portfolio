@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { educationList } from "../../data/portfolioData";
-import { GraduationCap, Calendar, Award, Layers } from "lucide-react";
+import { GraduationCap, Calendar, Layers } from "lucide-react";
 import TextReveal from "../ui/TextReveal";
 import TiltCard from "../ui/TiltCard";
 
@@ -92,28 +92,12 @@ export default function Education() {
                   )}
 
                   {/* Overview Description */}
-                  <p className="text-xs sm:text-sm text-muted leading-relaxed">
-                    {item.description}
-                  </p>
+                  {item.description && (
+                    <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
-
-                {/* Highlights / Achievements */}
-                {item.achievements && item.achievements.length > 0 && (
-                  <div className="mt-6 pt-5 border-t border-white/8">
-                    <h4 className="font-display text-[11px] font-bold uppercase tracking-wider text-muted/70 mb-3 flex items-center gap-1.5">
-                      <Award className="h-3.5 w-3.5 text-accent" />
-                      Highlights
-                    </h4>
-                    <ul className="flex flex-col gap-2">
-                      {item.achievements.map((ach, aIdx) => (
-                        <li key={aIdx} className="text-xs text-muted/90 flex items-start gap-2 leading-relaxed">
-                          <span className="h-1.5 w-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                          <span>{ach}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </TiltCard>
             </motion.div>
           ))}
